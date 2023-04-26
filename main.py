@@ -13,12 +13,14 @@ def get_pending_case() -> []:
     account_url = "https://swltest01.blob.core.windows.net/"
 
     try:
-        if "WEBSITE_INSTANCE_ID" in os.environ:
-            credential = DefaultAzureCredential()
-            # print("---running on Azure---")
-        else:
-            credential = InteractiveBrowserCredential()
-            # print("---running locally---")
+        # if "WEBSITE_INSTANCE_ID" in os.environ:
+        #     credential = DefaultAzureCredential()
+        #     # print("---running on Azure---")
+        # else:
+        #     credential = InteractiveBrowserCredential()
+        #     # print("---running locally---")
+
+        credential = DefaultAzureCredential()
 
         print("check1")
         blob_service_client = BlobServiceClient(account_url=account_url, credential=credential)
