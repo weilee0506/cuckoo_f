@@ -1,0 +1,6 @@
+azure-identity
+azure-storage-blob
+azure-data-tables
+azure-common
+azure-core
+azure-keyvault-secrets
