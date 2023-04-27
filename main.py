@@ -114,8 +114,12 @@ def get_pending_case() -> []:
             container_name = case["case_id"]
             blob_name = "test_" + case["case_target"]
             blob_client = blob_service_client.get_blob_client(container=container_name, blob=blob_name)
-
-
+            with open(file=os.path.join('./targets', blob_name), mode="wb") as sample_blob:
+                print("1")
+                download_stream = blob_client.download_blob()
+                print("2")
+                sample_blob.write(download_stream.readall())
+                print("3")
 
 
         return pending_case_info_list
